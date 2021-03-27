@@ -1,0 +1,174 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #078282FF;
+}
+
+.content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 1100px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content > .screen_panel{
+    flex: 2;
+}
+
+.content > .screen_panel > form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content > .screen_panel > form > #submit_form{
+    display: none;
+}
+
+.content > .screen_panel > form > #screen{
+    background-color: navy;
+    width: 75%;
+    height: 50%;
+    border-radius: 20px;
+    padding: 0 15px;
+    font-size: 1.4em;
+    color: white;
+    border: 1px solid black;
+    outline: none;
+}
+
+.content > .keyboard_panel{
+    flex: 8;
+    display: grid;
+    align-content: space-around;
+    font-weight: bold;
+    color: white;
+}
+
+.content > .keyboard_panel > .row{
+    display: grid;
+    justify-content: space-evenly;
+}
+
+.content > .keyboard_panel > .row.row1{
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+}
+
+.content > .keyboard_panel > .row.row2{
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto;
+}
+
+.content > .keyboard_panel > .row.row3{
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto;
+}
+
+.content > .keyboard_panel > .row.row4{
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto;
+}
+
+.content > .keyboard_panel > .row.row5{
+    grid-template-columns: auto;
+}
+
+.content > .keyboard_panel > .row > .key{
+    background-color: #3CB371;
+    border-radius: 5px;
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.content > .keyboard_panel > .row > .key:active{
+    transform: translateY(4px);
+    transition: 0.3s ease;
+}
+
+.content > .keyboard_panel > .row > .key.two_values{
+    display: flex;
+    flex-direction: column;
+}
+
+.content > .keyboard_panel > .row > .special_key{
+    background-color: #3CB371;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.content > .keyboard_panel > .row > .special_key:active{
+    transform: translateY(4px);
+    transition: 0.3s ease;
+}
+
+.content > .keyboard_panel > .row > #space{
+    width: 500px;
+}
+
+.content > .keyboard_panel > .row > #capslock{
+    display: flex;
+}
+
+.content > .keyboard_panel > .row > #capslock > :first-child{
+    padding: 0 20px;
+}
+
+.content > .keyboard_panel > .row > #capslock > input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.content > .keyboard_panel > .row > #capslock > #capslock_checkbox{
+    height: 10px;
+    width: 10px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.content > .keyboard_panel > .row > #tab, .content > .keyboard_panel > .row > #backspace, .content > .keyboard_panel > .row > #enter, .content > .keyboard_panel > .row > #capslock, .content > .keyboard_panel > .row > #shift1, .content > .keyboard_panel > .row > #shift2{
+    width: 130px;
+}
+
+@media screen and (max-width: 1500px)
+{
+    .content > .keyboard_panel > .row > .special_key{
+        font-size: 0.8em;
+    }
+
+    .content > .keyboard_panel > .row > #capslock > :first-child{
+        padding: 0 15px;
+    }
+}
+
+@media screen and (max-width: 1250px)
+{
+    .content > .keyboard_panel > .row > .special_key{
+        font-size: 0.7em;
+    }
+
+    .content > .keyboard_panel > .row > #capslock > :first-child{
+        padding: 0 10px;
+    }
+}
